@@ -1,6 +1,9 @@
 APPL_DATA_PATH = "res/aapl-min-data.txt"
 MSFT_DATA_PATH = "res/msft-min-data.txt"
 
+AAPL_FIGURE_TITLE = "AAPL - 1 min NASDAQ"
+MSFT_FIGURE_TITLE = "MSFT - 1 min NASDAQ"
+
 DATE_FORMAT = "%m/%d/%Y"
 TIME_FORMAT = "%H:%M"
 DATETIME_FORMAT = DATE_FORMAT + " " + TIME_FORMAT

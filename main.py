@@ -2,9 +2,10 @@ import util
 import constants
 
 figure, axes = util.create_subplots()
-figure.suptitle("AAPL - 1 min NASDAQ", fontsize=18)
+figure.suptitle(constants.MSFT_FIGURE_TITLE, fontsize=18)
 
-df = util.load_data(constants.APPL_DATA_PATH)
+df = util.load_data(constants.MSFT_DATA_PATH)
+
 util.plot_data(
     axes[0],
     df[constants.DATETIME_COLUMN],
@@ -37,24 +38,25 @@ util.plot_data(
     axes[0],
     df[constants.DATETIME_COLUMN],
     upper_band,
-    toggle_grid=False
+    toggle_grid=False,
+    color="green",
+    label="Upper Bollinger Band"
 )
 util.plot_data(
     axes[0],
     df[constants.DATETIME_COLUMN],
     lower_band,
-    toggle_grid=False
+    toggle_grid=False,
+    color="red",
+    label="Lower Bollinger Band"
 )
 util.plot_data(
     axes[0],
     df[constants.DATETIME_COLUMN],
     middle_band,
-    toggle_grid=False
+    toggle_grid=False,
+    color="black",
+    label="Middle Bollinger Band"
 )
-
-#plot sales and 4-day exponentially weighted moving average
-# plt.plot(df['sales'], label='Sales')
-# plt.plot(df['4dayEWM'], label='4-day EWM')
-
-#add legend to plot
-# plt.legend(loc=2)
+axes[0].fill_between(df[constants.DATETIME_COLUMN], upper_band, lower_band, color="paleturquoise")
+axes[0].legend(loc="upper right")
