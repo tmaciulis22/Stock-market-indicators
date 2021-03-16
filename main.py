@@ -2,9 +2,9 @@ import util
 import constants
 
 figure, axes = util.create_subplots()
-figure.suptitle(constants.MSFT_FIGURE_TITLE, fontsize=18)
+figure.suptitle(constants.AAPL_FIGURE_TITLE, fontsize=18)
 
-df = util.load_data(constants.MSFT_DATA_PATH)
+df = util.load_data(constants.APPL_DATA_PATH)
 
 util.plot_data(
     axes[0],

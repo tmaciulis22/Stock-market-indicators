@@ -45,19 +45,6 @@ def plot_data(
         axis.axhline(y=y_line, linewidth=3, color="y")
 
 
-def plot_data_single(x_values, y_values, title=None, x_label=None, y_label=None, y_line=None, toggle_grid=True):
-    plt.title(title)
-    if toggle_grid:
-        plt.grid()
-    if x_label is not None:
-        plt.xlabel(x_label)
-    if y_label is not None:
-        plt.ylabel(y_label)
-    plt.plot(x_values, y_values)
-    if y_line is not None:
-        plt.axhline(y=y_line, linewidth=3, color="y")
-
-
 def calculate_chaikin_volatility(df):
     high_low_diff = np.subtract(df[constants.HIGH_COLUMN], df[constants.LOW_COLUMN])
 
